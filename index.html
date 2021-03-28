@@ -1,0 +1,246 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Gallery </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <style>
+            
+html{
+    scroll-behavior:smooth;
+}
+body{
+    background-color:white;
+    text-indent:15%;
+    margin:0;
+}
+#content{
+   display:none;
+}
+#l{
+    color:white;
+    font-size:25px;
+    font-weight:450;
+    position:relative;
+    top:25%;
+}
+#loader{
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #2e3192),color-stop(1, #1bffff) ); 
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+.circle{
+    height:150px;
+    width:150px;
+    border-radius:75px;
+    background-color:white;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    overflow:hidden;
+}
+
+.circle:before{
+    content:"";
+    height:230px;
+    width:230px;
+    border-radius:90px;
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #2e3192),color-stop(1, #1bffff) ); 
+    position:absolute ;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    animation:fill 4s infinite;
+    }
+@keyframes fill{
+ 
+    0%{
+        transform:translate(-22px,200px) rotate(0deg);
+    }
+    100%{
+        transform:translate(-22px,41px) rotate(275deg)
+    }
+}    
+.pmenu {
+    position: fixed;
+    background-color:#2e3192;
+    text-align:right;
+    font-size:20px;
+    width:100%;
+    box-shadow:0px 3px 3px black;
+    font-weight:500;
+    z-index:1;
+    top:0px;
+}
+
+.pmenu a:hover {
+    background-color:black;
+    
+}
+
+.pmenu a, .dropmenu a {
+    display: block;
+    text-decoration: none;
+
+    padding:15px;
+    color:white;
+   
+}
+.pmenu a{
+    opacity:0.9;
+}
+
+.dropmenu {
+    display: none; 
+    position: absolute;
+    top: 58px;
+    width: 60%;
+    right:0%;
+    overflow:hidden ;
+    text-align:center;
+    background-color: black;
+    box-shadow: inset 0.5px 1px 3px 1px black;
+}
+.pmenu:hover .dropmenu {
+    display: block;
+}
+
+.dropmenu a:hover {
+    box-shadow: inset 0.5px 1px 3px 1px black;
+    background-color: #2e3192;
+    color:white;
+}
+.img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+    box-shadow:0px 0px 3px 3px black;
+}
+
+.img1 {
+    background-image: url("https://lh3.googleusercontent.com/pw/ACtC-3chkkVcSS8Gq2DfoJTdr8HeFgqv6XAhCXckyg1HugeIWCoCN0C6mdkiRRz3MHdnkpSKuv6zgKdKzui6I-DO-fysxIy8zlPAHzPkdk9s0XYeC2RZt6bkY9pg35626XxiOMP2ImIpkSBkXopqQVmBy9PR=w640-h1280-no?authuser=0");
+}
+
+.img2 {
+    background-image: url("https://wallpaperset.com/w/full/0/0/c/436185.jpg");
+}
+
+.img3 {
+    background-image: url("https://beachwallpapers.in/wp-content/uploads/2020/10/Wallpapers-On-Nature-Beauty-015.jpg");
+}
+
+.img4 {
+    background-image: url("https://i.pinimg.com/originals/f1/17/a4/f117a4bfe2db2c3b8c529e0b8e169d65.jpg");
+}
+
+.img5 {
+    background-image: url("https://itsevalicious.com/wp-content/uploads/2016/07/NatureWallpaperHDFreeDownload-1.jpg");
+}
+
+.img6 {
+    background-image: url("https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+
+.img7 {
+    background-image: url("https://images.unsplash.com/photo-1543880395-a9367f0acb68?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80");
+}
+
+.img8 {
+    background-image: url("https://i.pinimg.com/originals/b1/94/0e/b1940eb27d12eadbcdaa86dca0f1037d.jpg");
+}
+
+.img9 {
+    background-image: url("https://cutewallpaper.org/21/beautiful-background-wallpaper/Beautiful-Nature-Background-Wallpaper-Cute-Wallpapers.jpg");
+}
+
+h2 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center ;
+    background-color: white;
+    color: #2e3192;
+    height: 40px;
+    line-spacing:100px;
+    
+}
+#empty{
+    height:50px;
+}
+h4{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center ;
+    background-color:white;
+    color:blue;
+    height: 40px;
+    line-spacing:100px;
+}
+        </style>
+    </head>
+    <body>
+        <div id="loader">
+            <div class="circle">
+                <p id="l">Loading..</p>
+            </div>
+        </div>
+        <div id="content" >
+            <div class="pmenu">
+              <a href="#bar">MENU</a>
+               <div class="dropmenu">
+                 <a href="#1">MickyMouse</a>
+                 <a href="#2">AnimeBoy</a>
+                 <a href="#3">Cat</a>
+                 <a href="#4">Dog</a>
+                  <a href="#5">HandArt1</a>
+                  <a href="#6">Dinosaur</a>
+                 <a href="#7">HandArt2</a>
+                  <a href="#8">Artist</a>
+                 
+               </div>
+            </div>
+         
+        <div class="conteiner">
+        <div id="empty"></div>
+        <h2>GALLERY</h2>
+        <div class="img img1" id="1"></div>
+        <h2>MickyMouse</h2>
+        <div class="img img2" id="2"></div>
+        <h2>AnimeBoy</h2>
+        <div class="img img3" id="3"></div>
+        <h2>Cat</h2>
+        <div class="img img4" id="4"></div>
+        <h2>Dog</h2>
+        <div class="img img5" id="5"></div>
+        <h2>HandArt1</h2>
+        <div class="img img6" id="6"></div>
+        <h2>Dinosaur</h2>
+        <div class="img img7" id="7"></div>
+        <h2>HandArt2</h2>
+        <div class="img img8" id="8"></div>
+        <h2>Artist</h2>
+        <h4>By_Dhivya</h4>
+         </div>
+         <script>
+         alert("Swipe up to see my drawings")
+             function loader() {
+ var myVar = setTimeout(content,8000);
+}
+loader();
+function content() 
+{
+document.getElementById("loader").style.display = "none";
+document.getElementById("content").style.display = "block";
+}
+         </script>
+    </body>
+</html>
